@@ -1,0 +1,65 @@
+package com.haifei.ui;
+
+
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.webkit.WebView;
+
+/**
+ * JAVA 与 html通过javascript 相互调用的例子
+ * 
+ * @author: Haifei
+ * @data：2014-3-25
+ * @blog:http://blog.csdn.net/hellohaifei
+ *
+ */
+public class JavascriptInterface extends Activity {
+    private WebView webView;
+
+    @SuppressLint("JavascriptInterface")
+	public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.javascriptinterface);
+        //加载页面
+        webView = (WebView) findViewById(R.id.webView);
+        //允许JavaScript执行
+        webView.getSettings().setJavaScriptEnabled(true);
+        //找到Html文件，也可以用网络上的文件
+        webView.loadUrl("file:///android_asset/index.html");
+        // 添加一个对象, 让JS可以访问该对象的方法, 该对象中可以调用JS中的方法
+        webView.addJavascriptInterface(new Contact(), "contact");
+        webView.addJavascriptInterface(new MyContact(), "mycontact");
+    }
+
+    private class Contact {
+        //JavaScript调用此方法拨打电话
+        public void call(String phone) {
+            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone)));
+        }
+
+        //Html调用此方法传递数据
+        public void showcontacts() {
+            String json = "[{\"name\":\"zxx\", \"amount\":\"9999999\", \"phone\":\"18600012345\"}]"; 
+            // 调用JS中的方法
+            webView.loadUrl("javascript:show('" + json + "')");
+        }
+    }
+    
+    private  class MyContact extends Contact{
+        //JavaScript调用此方法拨打电话
+        public void mycall(String phone) {
+            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone)));
+        }
+
+        //Html调用此方法传递数据
+        public void showcontacts() {
+            String json = "[{\"name\":\"zxx\", \"amount\":\"9999999\", \"phone\":\"18600012345\"}]"; 
+            // 调用JS中的方法
+            webView.loadUrl("javascript:show('" + json + "')");
+        }
+    }
+}
