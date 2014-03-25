@@ -29,7 +29,7 @@ public class JavascriptInterface extends Activity {
         //允许JavaScript执行
         webView.getSettings().setJavaScriptEnabled(true);
         //找到Html文件，也可以用网络上的文件
-        webView.loadUrl("file:///android_asset/index.html");
+        webView.loadUrl("file:///android_asset/javascriptinterface.html");
         // 添加一个对象, 让JS可以访问该对象的方法, 该对象中可以调用JS中的方法
         webView.addJavascriptInterface(new Contact(), "contact");
         webView.addJavascriptInterface(new MyContact(), "mycontact");
