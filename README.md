@@ -1,5 +1,5 @@
-commLibs
+HFAndroidLibs
 ========
-12345678
+将好的android例子或者代码片段记录下来
 /n
-open source test
+目前仅用于个人积累知识
