@@ -32,8 +32,26 @@
         </table>
         
         <h1> 呵呵</h1>
-        <a href=javascript:mycontact.call("13121658375") >
-        	打电话
+        
+        <a href=javascript:mycontact.call("10010") >
+        	打电话10010
         </a>
+       
+        <br>
+        <p>
+        <a href="javascript:click_me();" >
+        	点击
+        </a>
+        <script language="javascript" type="text/javascript">
+        function click_me() {
+             alert("I am here");
+             if (mycontact == undefined) {
+                alert("error");
+             } else {
+				mycontact.mycall("10010");
+			}
+        }
+        </script>
+        
     </body>
 </html>
