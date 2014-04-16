@@ -29,6 +29,13 @@ public class DipHelper {
 		final float scale = c.getResources().getDisplayMetrics().density;
 		return (int) (pxValue / scale + 0.5f);
 	}
+	
+	public static int getDisplayWidth(Context c){
+		return c.getResources().getDisplayMetrics().widthPixels;
+	}
+	public static int getDisplayHeight(Context c){
+		return c.getResources().getDisplayMetrics().heightPixels;
+	}
 	/**
 	 * 判断字符串中是否含有数字
 	 * @param value
