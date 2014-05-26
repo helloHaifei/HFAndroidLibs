@@ -1,4 +1,4 @@
-package com.lee.pullrefresh;
+package com.haifei.pullrefresh;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,9 +10,9 @@ import android.os.Bundle;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.lee.pullrefresh.ui.PullToRefreshBase;
-import com.lee.pullrefresh.ui.PullToRefreshBase.OnRefreshListener;
-import com.lee.pullrefresh.ui.PullToRefreshScrollView;
+import com.haifei.pullrefresh.ui.PullToRefreshBase;
+import com.haifei.pullrefresh.ui.PullToRefreshScrollView;
+import com.haifei.pullrefresh.ui.PullToRefreshBase.OnRefreshListener;
 
 public class PullRefreshScrollViewActivity extends Activity {
 

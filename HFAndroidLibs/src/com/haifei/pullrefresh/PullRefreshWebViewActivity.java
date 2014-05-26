@@ -1,4 +1,4 @@
-package com.lee.pullrefresh;
+package com.haifei.pullrefresh;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.haifei.pullrefresh.ui.PullToRefreshBase;
+import com.haifei.pullrefresh.ui.PullToRefreshWebView;
+import com.haifei.pullrefresh.ui.PullToRefreshBase.OnRefreshListener;
 import com.haifei.ui.R;
-import com.lee.pullrefresh.ui.PullToRefreshBase;
-import com.lee.pullrefresh.ui.PullToRefreshBase.OnRefreshListener;
-import com.lee.pullrefresh.ui.PullToRefreshWebView;
 
 public class PullRefreshWebViewActivity extends Activity {
 

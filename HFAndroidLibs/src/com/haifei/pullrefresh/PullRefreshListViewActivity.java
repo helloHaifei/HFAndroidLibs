@@ -1,4 +1,4 @@
-package com.lee.pullrefresh;
+package com.haifei.pullrefresh;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -15,9 +15,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.lee.pullrefresh.ui.PullToRefreshBase;
-import com.lee.pullrefresh.ui.PullToRefreshBase.OnRefreshListener;
-import com.lee.pullrefresh.ui.PullToRefreshListView;
+import com.haifei.pullrefresh.ui.PullToRefreshBase;
+import com.haifei.pullrefresh.ui.PullToRefreshListView;
+import com.haifei.pullrefresh.ui.PullToRefreshBase.OnRefreshListener;
 
 public class PullRefreshListViewActivity extends Activity {
 

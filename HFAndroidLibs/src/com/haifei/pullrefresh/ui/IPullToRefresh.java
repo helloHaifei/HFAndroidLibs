@@ -1,10 +1,10 @@
-package com.lee.pullrefresh.ui;
+package com.haifei.pullrefresh.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.lee.pullrefresh.ui.PullToRefreshBase.OnRefreshListener;
+import com.haifei.pullrefresh.ui.PullToRefreshBase.OnRefreshListener;
 
 /**
  * 定义了拉动刷新的接口

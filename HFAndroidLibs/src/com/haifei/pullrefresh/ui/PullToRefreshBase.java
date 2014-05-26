@@ -1,6 +1,7 @@
-package com.lee.pullrefresh.ui;
+package com.haifei.pullrefresh.ui;
 
-import com.lee.pullrefresh.ui.ILoadingLayout.State;
+
+import com.haifei.pullrefresh.ui.ILoadingLayout.State;
 
 import android.content.Context;
 import android.util.AttributeSet;
