@@ -37,7 +37,7 @@ public class AndroidSerialNumber {
 	 */
 	public String getAndroidSerialNumber() {
 		String serialNumber = IMEI() + AndroidId() + WlanMacId();
-		serialNumber = MD5.getMD532(serialNumber);
+		serialNumber = HfMd5.getMD532(serialNumber);
 		return serialNumber;
 	}
 

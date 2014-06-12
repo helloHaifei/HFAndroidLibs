@@ -1,6 +1,11 @@
 package com.zhf.util;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import android.app.Activity;
@@ -65,5 +70,32 @@ public class FileUtil {
 		cursor.moveToFirst();
 		String path = cursor.getString(column_index);
 		return path;
+	}
+	/**
+	 * 从文件中读取 字节流
+	 * @param file
+	 * @return
+	 * @throws IOException
+	 */
+	public static byte[] readFileToByteArray(File file) throws IOException {
+		InputStream inputStream = null;
+		try {
+			inputStream = new FileInputStream(file);
+			ByteArrayOutputStream output = new ByteArrayOutputStream();
+			byte[] buffer = new byte[1024 * 4];
+			int n = 0;
+			while (-1 != (n = inputStream.read(buffer))) {
+				output.write(buffer, 0, n);
+			}
+			return output.toByteArray();
+		} finally {
+			try {
+				if (inputStream != null) {
+					inputStream.close();
+				}
+			} catch (IOException e) {
+				// Do nothing
+			}
+		}
 	}
 }
