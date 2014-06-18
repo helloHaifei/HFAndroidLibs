@@ -19,7 +19,9 @@ import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -563,5 +565,43 @@ public class HfFileUtil {
 		}
         return text;
     }
+    /**
+     * 将 bitmap写到 file
+     * @param bitmap
+     * @param filePath
+     */
+    public static void writeBitmapToFile(Bitmap bitmap, String filePath){
+		 // 写入压缩后的图片
+       File tmpfile=new File(filePath);
+       tmpfile.getName();
+       File newfile = new File(filePath);
+       try {
+           FileOutputStream out=new FileOutputStream(newfile);
+           if(bitmap.compress(Bitmap.CompressFormat.PNG, 70, out)){
+               out.flush();
+               out.close();
+           }
+          
+       } catch (FileNotFoundException e) {
+           e.printStackTrace();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+       
+	}
+	
+    /**
+     * 得到一个临时存放图片的地址
+     * @return
+     */
+	public static String getTmpPicturePath(){
+		String fileName = System.currentTimeMillis()+".jpg";
+		/*if(Environment.getExternalStorageDirectory().exists()){
+			return Environment.getExternalStorageDirectory().getPath()+"/goumin/" + fileName;
+		}else{
+			Environment.getDataDirectory().get
+		}*/
+		return Environment.getExternalStorageDirectory().getPath()+"/goumin/" + fileName;
+	}
     
 }
