@@ -21,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 
 import android.util.Log;
@@ -559,6 +560,71 @@ public class HfDateUtil {
       }
       return week;
     }
+    
+    /**
+	 * 
+	 * @param milliseconds
+	 * @return
+	 */
+	public static String getDateTime(Long milliseconds){
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date date = new Date(milliseconds);
+		return format.format(date);
+	}
+	/**
+	 * 
+	 * @param milliseconds
+	 * @return
+	 */
+	public static String getDate(Long milliseconds){
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = new Date(milliseconds);
+		
+		return format.format(date);
+	}
+	public static String getDate(String milliseconds){
+		return getDate(Long.valueOf(milliseconds));
+	}
+
+	/**
+	 * 
+	 * @param milliseconds
+	 * @param dateFormat
+	 * @return
+	 */
+	public static String getDate(String milliseconds, String dateFormat){
+		SimpleDateFormat format = new SimpleDateFormat(dateFormat);
+		Date date = new Date(Long.valueOf(milliseconds));
+		
+		return format.format(date);
+	}
+	/**
+	 * 
+	 * @param milliseconds
+	 * @return 星期*
+	 */
+	public static String getWeek(String milliseconds){
+		SimpleDateFormat format = new SimpleDateFormat("EE",Locale.CHINA);
+		Date date = new Date(Long.valueOf(milliseconds));
+		
+		return format.format(date);
+	}
+	public static String getTime(String milliseconds){
+		SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
+		Date date = new Date(Long.valueOf(milliseconds));
+		
+		return format.format(date);
+	}
+	
+	/**
+	 * 
+	 * @return 当前时间
+	 */
+	public String getDate() {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return format.format(new Date());
+	}
 	
 	/**
      * The main method.

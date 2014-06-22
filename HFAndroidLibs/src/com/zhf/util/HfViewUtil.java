@@ -153,5 +153,20 @@ public class HfViewUtil {
 		final float scale = context.getResources().getDisplayMetrics().density;
 		return (int) (pxValue / scale + 0.5f);
 	}
-	
+	/**
+	 * 得到屏幕宽度
+	 * @param context
+	 * @return
+	 */
+	public static int getDisplayWidth(Context context){
+		return context.getResources().getDisplayMetrics().widthPixels;
+	}
+	/**
+	 * 得到屏幕高度
+	 * @param context
+	 * @return
+	 */
+	public static int getDisplayHeight(Context context){
+		return context.getResources().getDisplayMetrics().heightPixels;
+	}
 }
