@@ -18,6 +18,7 @@ public class MainActivity extends Activity {
 	{
 		mList = new ArrayList<MainActivity.Custom>();
 		mList.add(new Custom("JAVA与HTML相互调用", JavascriptInterface.class));
+		mList.add(new Custom("TextViw样式", TextViewSpanActivity.class));
 	}
 
 	
