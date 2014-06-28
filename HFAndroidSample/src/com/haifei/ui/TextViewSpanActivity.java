@@ -124,7 +124,8 @@ public class TextViewSpanActivity extends Activity {
 			ds.setUnderlineText(false);
 			// 设置颜色高亮
 			ds.setARGB(255, 255, 00, 00);
-
+			ds.bgColor = 0xabababab;
+			
 		}
 	}
 
