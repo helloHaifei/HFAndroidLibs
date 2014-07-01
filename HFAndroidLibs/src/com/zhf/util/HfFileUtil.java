@@ -596,12 +596,29 @@ public class HfFileUtil {
      */
 	public static String getTmpPicturePath(){
 		String fileName = System.currentTimeMillis()+".jpg";
-		/*if(Environment.getExternalStorageDirectory().exists()){
-			return Environment.getExternalStorageDirectory().getPath()+"/goumin/" + fileName;
-		}else{
-			Environment.getDataDirectory().get
-		}*/
+		File file = new File(Environment.getExternalStorageDirectory().getPath()+"/goumin/");
+		if(!file.exists()){
+			file.mkdir();
+		}
 		return Environment.getExternalStorageDirectory().getPath()+"/goumin/" + fileName;
 	}
+	/**
+	 * 判断文件是否存在
+	 * @param path
+	 * @return
+	 */
+	public static boolean fileIsExists(String path) {
+		try {
+			File f = new File(path);
+			if (!f.exists()) {
+				return false;
+			}
+
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+	
     
 }
