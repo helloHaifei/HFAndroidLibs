@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res/com.haifei.ui"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_vertical_margin" >
+
+    <com.haifei.ui.CustomView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:contentText="内容"
+        custom:titleText="标题" />
+
+</RelativeLayout>

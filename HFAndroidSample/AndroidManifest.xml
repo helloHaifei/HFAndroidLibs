@@ -30,6 +30,8 @@
         
         <activity android:name="com.haifei.ui.JavascriptInterface" />
         <activity android:name="com.haifei.ui.TextViewSpanActivity" />
+        <activity android:name="com.haifei.ui.CustomViewActivity" />
+        <activity android:name="com.haifei.ui.DialogActivity" />
     </application>
 
 </manifest>

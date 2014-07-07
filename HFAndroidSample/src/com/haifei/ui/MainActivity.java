@@ -19,6 +19,8 @@ public class MainActivity extends Activity {
 		mList = new ArrayList<MainActivity.Custom>();
 		mList.add(new Custom("JAVA与HTML相互调用", JavascriptInterface.class));
 		mList.add(new Custom("TextViw样式", TextViewSpanActivity.class));
+		mList.add(new Custom("自定义组件使用attr属性", CustomViewActivity.class));
+		mList.add(new Custom("自定义对话框", DialogActivity.class));
 	}
 
 	
@@ -35,6 +37,7 @@ public class MainActivity extends Activity {
 		
 		for (Custom item :mList) {
 			TextView tv = new TextView(this);
+			tv.setTextSize(16);
 			tv.setText(item.title);
 			tv.setTag(item.activityClass);
 			tv.setOnClickListener(new OnClickListener() {
