@@ -32,6 +32,7 @@
         <activity android:name="com.haifei.ui.TextViewSpanActivity" />
         <activity android:name="com.haifei.ui.CustomViewActivity" />
         <activity android:name="com.haifei.ui.DialogActivity" />
+        <activity android:name="com.haifei.ui.NotificationActivity" />
     </application>
 
 </manifest>
