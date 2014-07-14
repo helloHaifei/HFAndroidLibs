@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
 		mList.add(new Custom("自定义组件使用attr属性", CustomViewActivity.class));
 		mList.add(new Custom("自定义对话框", DialogActivity.class));
 		mList.add(new Custom("通知栏显示", NotificationActivity.class));
+		mList.add(new Custom("毛玻璃效果", BlurActivity.class));
 	}
 
 	

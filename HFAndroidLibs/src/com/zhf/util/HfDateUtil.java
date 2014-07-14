@@ -119,6 +119,7 @@ public class HfDateUtil {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		
 		return mDateTime;
 	}
 	
@@ -526,7 +527,7 @@ public class HfDateUtil {
 	 * @return String   星期几
 	 */
     public static String getWeekNumber(String strDate,String inFormat) {
-      String week = "星期日";
+      //String week = "星期日";
       Calendar calendar = new GregorianCalendar();
       DateFormat df = new SimpleDateFormat(inFormat);
       try {
@@ -534,31 +535,39 @@ public class HfDateUtil {
 	  } catch (Exception e) {
 		  return "错误";
 	  }
-      int intTemp = calendar.get(Calendar.DAY_OF_WEEK) - 1;
-      switch (intTemp){
-        case 0:
-          week = "星期日";
-          break;
-        case 1:
-          week = "星期一";
-          break;
-        case 2:
-          week = "星期二";
-          break;
-        case 3:
-          week = "星期三";
-          break;
-        case 4:
-          week = "星期四";
-          break;
-        case 5:
-          week = "星期五";
-          break;
-        case 6:
-          week = "星期六";
-          break;
-      }
-      return week;
+      
+      int intTemp = calendar.get(Calendar.DAY_OF_WEEK);
+      
+      return getWeekNumber(intTemp);
+    }
+    
+    public static String getWeekNumber(int dayOfWeek){
+    	String week = "错误";
+    	
+        switch (dayOfWeek){
+          case Calendar.SUNDAY:
+            week = "星期日";
+            break;
+          case Calendar.MONDAY:
+            week = "星期一";
+            break;
+          case Calendar.TUESDAY:
+            week = "星期二";
+            break;
+          case Calendar.WEDNESDAY:
+            week = "星期三";
+            break;
+          case Calendar.THURSDAY:
+            week = "星期四";
+            break;
+          case Calendar.FRIDAY:
+            week = "星期五";
+            break;
+          case Calendar.SATURDAY:
+            week = "星期六";
+            break;
+        }
+        return week;
     }
     
     /**

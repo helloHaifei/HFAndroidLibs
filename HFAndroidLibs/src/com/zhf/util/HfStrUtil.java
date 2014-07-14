@@ -353,6 +353,20 @@ public final class HfStrUtil {
 		} 
 		return str;
 	}
+    /**
+	  * 描述：不足2个字符的在前面补“0”.
+	  *
+	  * @param str 指定的字符串
+	  * @return 至少2个字符的字符串
+	  */
+	public static String strFormat2(int str) {
+		if (str >=0 && str < 10) {
+			return "0" + str;
+		} else {
+			return "" + str;
+		}
+
+	}
     
     /**
      * 描述：截取字符串到指定字节长度.
