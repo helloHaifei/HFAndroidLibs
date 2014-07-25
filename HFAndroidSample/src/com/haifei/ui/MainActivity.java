@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 		
 		for (Custom item :mList) {
 			TextView tv = new TextView(this);
-			tv.setTextSize(16);
+			tv.setTextSize(24);
 			tv.setText(item.title);
 			tv.setTag(item.activityClass);
 			tv.setOnClickListener(new OnClickListener() {
@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 				}
 			});
 			
-			root.addView(tv,new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 50));
+			root.addView(tv,new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT));
 		}
 	}
 	
