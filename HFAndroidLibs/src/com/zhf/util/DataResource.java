@@ -14,43 +14,26 @@ import android.content.Context;
  */
 public class DataResource {
 
-	static List<ResModel> list;
-	static String[] nameArr;
-	static int[] valueArr;
+	 List<ResModel> list;
+	 String[] nameArr;
+	 int[] valueArr;
 	
-	static DataResource mDataResource;
+	 //DataResource mDataResource;
 	
-	//static Context context;
-	
-	public static DataResource getInstance(Context context,int resArrayName, int resArrayValue){
-		if(mDataResource == null){
-			mDataResource = new DataResource(context);
-		}
-	
+	 public DataResource(Context context,int resArrayName, int resArrayValue) {
+
 		nameArr = context.getResources().getStringArray(resArrayName);
 
 		valueArr = context.getResources().getIntArray(resArrayValue);
 		
+		list = new ArrayList<DataResource.ResModel>();
 		list.clear();
 		for (int i = 0; i < nameArr.length; i++) {
 			list.add(new ResModel(nameArr[i], valueArr[i], i));
 		}
 
-		return mDataResource;
 	}
 
-	/**
-	 * 
-	 * @param resArrayName
-	 *            R.array.
-	 * @param resArrayValue
-	 *            R.array.
-	 */
-	public DataResource(Context context) {
-
-		list = new ArrayList<DataResource.ResModel>();
-	}
-	
 	/**
 	 * 根据名字取值
 	 * @param name
@@ -59,11 +42,13 @@ public class DataResource {
 	public int getValue(String name){
 		for (int i = 0; i<list.size(); i++) {
 			if(name.equals(list.get(i).name)){
-				return i;
+				return list.get(i).value;
 			}
 		}
 		return -1;
 	}
+	
+	
 	/**
 	 * 根据值取名字
 	 * @param value
@@ -78,15 +63,31 @@ public class DataResource {
 		return "";
 	}
 	
+	public int getValuePosition(int value){
+		for (int i = 0; i < valueArr.length; i++) {
+			if(value == valueArr[i])
+				return i;
+		}
+		return -1;
+	}
+	
+	public int getNamePosition(String name){
+		for (int i = 0; i < nameArr.length; i++) {
+			if(name.equals( nameArr[i]))
+				return i;
+		}
+		return -1;
+	}
+	
 	public List<ResModel> getResModelList() {
 		return list;
 	}
 
-	public String[] getNameArr() {
+	public String[] getNameArray() {
 		return nameArr;
 	}
 
-	public int[] getValueArr() {
+	public int[] getValueArray() {
 		return valueArr;
 	}
 	

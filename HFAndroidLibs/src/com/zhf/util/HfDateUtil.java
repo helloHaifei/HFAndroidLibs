@@ -630,11 +630,19 @@ public class HfDateUtil {
 	 * 
 	 * @return 当前时间
 	 */
-	public String getDate() {
+	public static String getDate() {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return format.format(new Date());
 	}
 	
+	/**
+	 * 
+	 * @return 得到最后更新的时间
+	 */
+	public static String getLastUpdateTime() {
+		SimpleDateFormat format = new SimpleDateFormat("MM-dd HH:mm");
+		return format.format(new Date());
+	}
 	/**
      * The main method.
      *

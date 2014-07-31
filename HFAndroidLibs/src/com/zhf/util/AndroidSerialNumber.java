@@ -1,7 +1,5 @@
 package com.zhf.util;
 
-
-
 import android.content.Context;
 import android.net.wifi.WifiManager;
 import android.provider.Settings.Secure;
@@ -47,10 +45,14 @@ public class AndroidSerialNumber {
 	 * @return
 	 */
 	public String IMEI() {
-
-		TelephonyManager TelephonyMgr = (TelephonyManager) mContext
-				.getSystemService(Context.TELEPHONY_SERVICE);
-		String szImei = TelephonyMgr.getDeviceId();
+		String szImei = "";
+		try {
+			
+			TelephonyManager TelephonyMgr = (TelephonyManager) mContext
+					.getSystemService(Context.TELEPHONY_SERVICE);
+			szImei = TelephonyMgr.getDeviceId();
+		} catch (Exception e) {
+		}
 		return szImei;
 	}
 
