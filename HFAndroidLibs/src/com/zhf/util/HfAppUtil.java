@@ -28,6 +28,7 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -316,4 +317,41 @@ public class HfAppUtil {
 		return flag;
 	}
 
+    /**
+     * 描述：得到app版本号
+     * @param context
+     * @return
+     */
+	public static String getAppVersion(Context context) {
+		String version = "";
+		try {
+			version = context.getPackageManager().getPackageInfo(context.getPackageName(),
+					0).versionName;
+				
+		} catch (NameNotFoundException e) {
+			//e.printStackTrace();
+		}
+		
+		return version;
+	}
+	
+	/**
+     * 描述：得到app版本号和versionCode
+     * @param context
+     * @return
+     */
+	public static String getAppVersionAndCode(Context context) {
+		String version = "";
+		try {
+			version = context.getPackageManager().getPackageInfo(context.getPackageName(),
+					0).versionName
+					+ "."
+					+ context.getPackageManager().getPackageInfo(context.getPackageName(),
+							0).versionCode;
+		} catch (NameNotFoundException e) {
+			//e.printStackTrace();
+		}
+		
+		return version;
+	}
 }

@@ -643,6 +643,41 @@ public class HfDateUtil {
 		SimpleDateFormat format = new SimpleDateFormat("MM-dd HH:mm");
 		return format.format(new Date());
 	}
+	
+	/**
+	 * 
+	 * @param sourceTimeMillis
+	 * @return
+	 */
+	public static String getTimeDesc(long sourceTimeMillis){
+		String result = "";
+		long currentTime = System.currentTimeMillis();
+		long currYear = (currentTime - (currentTime % (60 * 60 * 24 * 365)));
+		
+		int diffSecond = (int) (currentTime / 1000 - sourceTimeMillis / 1000);
+		
+		if (diffSecond < 60) {
+			result = "刚刚";
+		} else if (diffSecond < 60 * 60) {
+			result = diffSecond / (60) + "分钟前";
+		} else if (diffSecond < 60 * 60 * 24) {
+			result = (int) diffSecond / (60 * 60) + "小时前";
+		} else if (diffSecond < 60 * 60 * 24 * 8) {
+			result = (int) diffSecond / (60 * 60 * 24) + "天前";
+		} else if (sourceTimeMillis > currYear) {
+			SimpleDateFormat format = new SimpleDateFormat("MM月dd日", Locale.CHINA);
+			Date date = new Date(sourceTimeMillis);
+			result =  format.format(date);
+		} else {
+			SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日", Locale.CHINA);
+			Date date = new Date(sourceTimeMillis);
+			result =  format.format(date);
+		}
+
+		return result;
+		
+	}
+	
 	/**
      * The main method.
      *
