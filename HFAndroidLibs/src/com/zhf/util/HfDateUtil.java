@@ -652,7 +652,6 @@ public class HfDateUtil {
 	public static String getTimeDesc(long sourceTimeMillis){
 		String result = "";
 		long currentTime = System.currentTimeMillis();
-		long currYear = (currentTime - (currentTime % (60 * 60 * 24 * 365)));
 		
 		int diffSecond = (int) (currentTime / 1000 - sourceTimeMillis / 1000);
 		
@@ -664,14 +663,21 @@ public class HfDateUtil {
 			result = (int) diffSecond / (60 * 60) + "小时前";
 		} else if (diffSecond < 60 * 60 * 24 * 8) {
 			result = (int) diffSecond / (60 * 60 * 24) + "天前";
-		} else if (sourceTimeMillis > currYear) {
-			SimpleDateFormat format = new SimpleDateFormat("MM月dd日", Locale.CHINA);
-			Date date = new Date(sourceTimeMillis);
-			result =  format.format(date);
 		} else {
-			SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日", Locale.CHINA);
-			Date date = new Date(sourceTimeMillis);
-			result =  format.format(date);
+			Calendar calendar = new GregorianCalendar();
+			calendar.setTimeInMillis(currentTime);
+			int currYear = calendar.get(Calendar.YEAR);
+			calendar.setTimeInMillis(sourceTimeMillis);
+			int sourceYear = calendar.get(Calendar.YEAR);
+			if(sourceYear == currYear){
+				SimpleDateFormat format = new SimpleDateFormat("MM月dd日", Locale.CHINA);
+				Date date = new Date(sourceTimeMillis);
+				result =  format.format(date);
+			}else{
+				SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日", Locale.CHINA);
+				Date date = new Date(sourceTimeMillis);
+				result =  format.format(date);
+			}
 		}
 
 		return result;
