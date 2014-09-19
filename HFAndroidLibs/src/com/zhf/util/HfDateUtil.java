@@ -26,7 +26,6 @@ import java.util.Locale;
 
 import android.util.Log;
 
-// TODO: Auto-generated Javadoc
 /**
  * 描述：日期处理类.
  *

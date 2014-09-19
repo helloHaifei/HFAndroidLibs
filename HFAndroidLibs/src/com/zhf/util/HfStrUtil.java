@@ -24,7 +24,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * 描述：字符串处理类.
  *

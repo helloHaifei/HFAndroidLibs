@@ -39,7 +39,6 @@ import android.os.StatFs;
 import android.util.Log;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * 描述：文件操作类.
  *

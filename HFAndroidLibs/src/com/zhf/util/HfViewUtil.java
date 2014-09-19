@@ -24,7 +24,6 @@ import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AbViewUtil.
  */

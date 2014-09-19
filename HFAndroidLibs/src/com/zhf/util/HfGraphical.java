@@ -25,7 +25,6 @@ import android.text.TextPaint;
 import android.util.FloatMath;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * 描述：图形处理类.
  *

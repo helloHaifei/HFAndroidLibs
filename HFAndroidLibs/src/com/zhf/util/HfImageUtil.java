@@ -41,7 +41,6 @@ import android.view.View.MeasureSpec;
 import android.widget.ImageView;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * 描述：图片处理类.
  *

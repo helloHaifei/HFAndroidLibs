@@ -17,7 +17,6 @@ package com.zhf.util;
 
 import java.security.MessageDigest;
 
-// TODO: Auto-generated Javadoc
 /**
  * 描述：MD5加密.
  *

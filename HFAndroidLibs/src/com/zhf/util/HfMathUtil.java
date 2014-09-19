@@ -17,7 +17,6 @@ package com.zhf.util;
 
 import java.math.BigDecimal;
 
-// TODO: Auto-generated Javadoc
 /**
  * 描述：数学处理类.
  *

@@ -37,7 +37,6 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AbAppUtil.
  */
