@@ -569,7 +569,7 @@ public class HfFileUtil {
      * @param bitmap
      * @param filePath
      */
-    public static void writeBitmapToFile(Bitmap bitmap, String filePath){
+   /* public static void writeBitmapToFile(Bitmap bitmap, String filePath){
 		 // 写入压缩后的图片
        File tmpfile=new File(filePath);
        tmpfile.getName();
@@ -587,20 +587,9 @@ public class HfFileUtil {
            e.printStackTrace();
        }
        
-	}
+	}*/
 	
-    /**
-     * 得到一个临时存放图片的地址
-     * @return
-     */
-	public static String getTmpPicturePath(){
-		String fileName = System.currentTimeMillis()+".jpg";
-		File file = new File(Environment.getExternalStorageDirectory().getPath()+"/goumin/");
-		if(!file.exists()){
-			file.mkdir();
-		}
-		return Environment.getExternalStorageDirectory().getPath()+"/goumin/" + fileName;
-	}
+   
 	/**
 	 * 判断文件是否存在
 	 * @param path
