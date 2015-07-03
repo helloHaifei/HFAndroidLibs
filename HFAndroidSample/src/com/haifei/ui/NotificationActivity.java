@@ -11,6 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+/**
+ * 通知栏
+ * @author Administrator
+ *
+ */
 public class NotificationActivity extends Activity {
 
 	private static int MOOD_NOTIFICATIONS = 999;

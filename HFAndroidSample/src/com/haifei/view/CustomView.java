@@ -1,4 +1,7 @@
-package com.haifei.ui;
+package com.haifei.view;
+
+import com.haifei.ui.R;
+import com.haifei.ui.R.styleable;
 
 import android.content.Context;
 import android.content.res.TypedArray;

@@ -1,6 +1,5 @@
 package com.haifei.ui;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -20,7 +19,9 @@ import android.text.style.SubscriptSpan;
 import android.text.style.SuperscriptSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,17 +33,17 @@ import android.widget.Toast;
  * @blog:http://blog.csdn.net/hellohaifei
  * 
  */
-public class TextViewSpanActivity extends Activity {
+public class TextViewSpanFragment extends BaseFragment {
 	private TextView mTextView;
 
 	SpannableStringBuilder spanBuilder;
 	String contentText;
 
+	
 
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		mTextView = new TextView(this);
-		setContentView(mTextView);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		mTextView = new TextView(mContext);
 		initSpan();
 		mTextView.setText(spanBuilder);
 
@@ -51,6 +52,8 @@ public class TextViewSpanActivity extends Activity {
 		// 设置TextView中的超链接可点击
 		mTextView.setMovementMethod(LinkMovementMethod.getInstance());
 		
+		
+		return mTextView;
 	}
 	
 	private void initSpan() {
@@ -99,7 +102,7 @@ public class TextViewSpanActivity extends Activity {
 		addSpan(underline, new UnderlineSpan());
 		addSpan(italic, new StyleSpan(android.graphics.Typeface.BOLD_ITALIC));
 		addSpan(weiboName, new WeiboAtClickSpan());
-		addSpan(owner, new ImageSpan(this, R.drawable.ic_launcher));// 图片
+		addSpan(owner, new ImageSpan(mContext, R.drawable.ic_launcher));// 图片
 
 	}
 
@@ -114,7 +117,7 @@ public class TextViewSpanActivity extends Activity {
 		@Override
 		public void onClick(View arg0) {
 			// 响应文字点击事件
-			Toast.makeText(TextViewSpanActivity.this, "click", Toast.LENGTH_SHORT).show();
+			Toast.makeText(mContext, "click", Toast.LENGTH_SHORT).show();
 		}
 
 		@Override
