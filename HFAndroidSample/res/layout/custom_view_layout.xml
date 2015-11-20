@@ -11,6 +11,10 @@
         android:layout_height="wrap_content"
         custom:contentText="内容"
         custom:titleText="标题" />
+    
+      <com.haifei.view.ClockView 
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
 
     <com.haifei.view.RainbowProcessBar
         android:layout_width="match_parent"
@@ -18,5 +22,7 @@
         custom:rainbowbar_color="@color/red"
         custom:rainbowbar_hspace="50dp"
         custom:rainbowbar_vspace="2dp" />
+    
+  
 
 </LinearLayout>
